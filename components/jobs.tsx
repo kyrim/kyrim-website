@@ -11,8 +11,8 @@ const JobsContainer = styled.div`
 `;
 
 const JobImage = styled(Image)`
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
   box-shadow: ${(props) => props.theme.boxShadow};
 `;
 

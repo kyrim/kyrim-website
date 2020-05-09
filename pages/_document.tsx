@@ -13,9 +13,14 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
+            rel="preload"
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,500,600,700"
-            rel="stylesheet"
-            type="text/css"
+            as="style"
+            onLoad={function (this: any) {
+              this.onload = null;
+              this.rel = "stylesheet";
+              document.body.classList.add("fontLoaded");
+            }}
           />
           <link rel="icon" href="/favicon.ico" />
           <meta
