@@ -13,9 +13,11 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="preload"
+            rel="prefetch"
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,500,600,700"
-            as="style"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
             onLoad={function (this: any) {
               this.onload = null;
               this.rel = "stylesheet";

@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
 interface Props {}
 
-class HouseMyStuffApp extends App<Props> {
+class MyWebsiteApp extends App<Props> {
   render() {
     const { Component, pageProps } = this.props;
 
@@ -47,4 +47,4 @@ class HouseMyStuffApp extends App<Props> {
   }
 }
 
-export default HouseMyStuffApp;
+export default MyWebsiteApp;
