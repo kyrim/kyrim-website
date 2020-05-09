@@ -44,20 +44,6 @@ const TopHero = styled(WavyHero)`
   flex-direction: column;
 `;
 
-const ProfilePicture = styled.picture`
-  z-index: 1;
-  margin-top: 1rem;
-
-  & > img {
-    width: 240px;
-    height: 240px;
-    border-radius: 50% 50%;
-    border: 2px solid ${(props) => props.theme.colors.primary};
-    box-shadow: ${(props) => props.theme.boxShadow};
-    vertical-align: middle;
-  }
-`;
-
 const ProfilePic = styled.img`
   z-index: 1;
   margin-top: 1rem;
@@ -183,12 +169,6 @@ export default function Home() {
             src={require("../images/kyrim.jpg")}
             alt="A Picture of kyrim"
           />
-
-          {/* <ProfilePicture>
-            <source srcSet="/kyrim.webp" type="image/webp" />
-            <source srcSet="/kyrim.jpg" type="image/jpeg" />
-            <img src="/kyrim.jpg" alt="A Picture of kyrim" />
-          </ProfilePicture> */}
           <BottomOfHeroWave />
         </TopHero>
 
@@ -249,10 +229,10 @@ export default function Home() {
         <Footer>
           <SocialMediaIcons>
             <a href="https://www.linkedin.com/in/kyrim-steele-963bb58b/">
-              <LinkIcons src="/linkedin.png" alt="My LinkedIn profile" />
+              <LinkIcons src={require("../images/linkedin.png")} alt="My LinkedIn profile" />
             </a>
             <a href="https://github.com/kyrim">
-              <LinkIcons src="/git.png" alt="My github page" />
+              <LinkIcons src={require("../images/git.png")} alt="My github page" />
             </a>
           </SocialMediaIcons>
           <FooterText>
