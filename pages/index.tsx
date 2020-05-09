@@ -44,14 +44,18 @@ const TopHero = styled(WavyHero)`
   flex-direction: column;
 `;
 
-const ProfilePic = styled(Image)`
-  margin-top: 1rem;
+const ProfilePicture = styled.picture`
   z-index: 1;
-  width: 256px;
-  height: 256px;
-  border-radius: 50% 50%;
-  border: 2px solid ${(props) => props.theme.colors.primary};
-  box-shadow: ${(props) => props.theme.boxShadow};
+  margin-top: 1rem;
+
+  & > img {
+    width: 256px;
+    height: 256px;
+    border-radius: 50% 50%;
+    border: 2px solid ${(props) => props.theme.colors.primary};
+    box-shadow: ${(props) => props.theme.boxShadow};
+    vertical-align: middle;
+  }
 `;
 
 const AboutMe = styled(BaseHero)`
@@ -163,7 +167,11 @@ export default function Home() {
         <TopHero>
           <Title>Hello! I'm Kyrim,</Title>
           <Subtitle>a Full Stack Web Software Engineer.</Subtitle>
-          <ProfilePic src="/kyrim.jpeg" alt="A Picture of Kyrim" />
+          <ProfilePicture>
+            <source srcSet="/kyrim.webp" type="image/webp" />
+            <source srcSet="/kyrim.jpg" type="image/jpeg" />
+            <img src="/kyrim.jpg" alt="A Picture of kyrim" />
+          </ProfilePicture>
           <BottomOfHeroWave />
         </TopHero>
 

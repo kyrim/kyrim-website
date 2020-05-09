@@ -11,18 +11,36 @@ const JobsContainer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const JobImage = styled(Image)`
+const JobPicture = styled.picture`
   margin-right: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: ${(props) => props.theme.boxShadow};
+
+  & > img {
+    vertical-align: middle;
+  }
 `;
 
 export const Timeline = () => {
   return (
     <JobsContainer>
-      <JobImage src="/swinburne.png" alt="Swinburne University of Technology" />
-      <JobImage src="/siemens.png" alt="Siemens" />
-      <JobImage src="/compass.png" alt="Compass Education" />
+      <JobPicture>
+        <source srcSet="/swinburne.webp" type="image/webp" />
+        <source srcSet="/swinburne.jpg" type="image/jpeg" />
+        <img src="/swinburne.jpg" alt="Swinburne University of Technology" />
+      </JobPicture>
+
+      <JobPicture>
+        <source srcSet="/siemens.webp" type="image/webp" />
+        <source srcSet="/siemens.jpg" type="image/jpeg" />
+        <img src="/siemens.jpg" alt="Siemens" />
+      </JobPicture>
+
+      <JobPicture>
+        <source srcSet="/compass.webp" type="image/webp" />
+        <source srcSet="/compass.jpg" type="image/jpeg" />
+        <img src="/compass.jpg" alt="Compass Education" />
+      </JobPicture>
     </JobsContainer>
   );
 };
