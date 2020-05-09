@@ -76,11 +76,9 @@ const TimelinePanel = styled(Panel)`
 `;
 
 const SearchInput = styled(Input)`
-  &:input {
+  & * {
     color: ${(props) => props.theme.colors.white};
   }
-
-  color: ${(props) => props.theme.colors.white};
   font-size: 2rem;
 `;
 
@@ -97,7 +95,7 @@ const BottomOfHeroWave = () => (
   <Wave viewBox="0 0 1440 320" preserveAspectRatio="none">
     <path
       fill="white"
-      fill-opacity="1"
+      fillOpacity="1"
       d="M0,224L48,208C96,192,192,160,288,128C384,96,480,64,576,85.3C672,107,768,181,864,224C960,267,1056,277,1152,245.3C1248,213,1344,139,1392,101.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
     ></path>
   </Wave>
@@ -136,7 +134,7 @@ export default function Home() {
             </TimelinePanel>
             <Subtitle>Experience</Subtitle>
             <SearchInput
-              color="white"
+              color="#ffffff"
               label="Type React, C#, Frontend, database etc..."
             />
           </ShiftedDiv>
