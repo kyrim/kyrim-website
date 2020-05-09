@@ -24,7 +24,7 @@ const SiteTheme: DefaultTheme = {
 
   font: {
     baseFontFamily: `'Open Sans', sans-serif`,
-    baseFontSize: "16px",
+    baseFontSize: "20px",
     controlFontSize: "0.875rem",
 
     fontWeightRegular: "400",
@@ -33,9 +33,9 @@ const SiteTheme: DefaultTheme = {
     lineHeight: "1.5",
 
     typography: {
-      header1Size: "4rem",
-      header2Size: "3rem",
-      header3Size: "2rem",
+      header1Size: "2rem",
+      header2Size: "1.5rem",
+      header3Size: "1rem",
     },
   },
 };

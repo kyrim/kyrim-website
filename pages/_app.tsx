@@ -8,7 +8,7 @@ import { SiteTheme } from "../site-theme";
 
 const GlobalStyle = createGlobalStyle`
   html {
-    font-size: 12px;
+    font-size: 16px;
 
     @media only screen and (min-width: 768px) {
         font-size: ${(props) => props.theme.font.baseFontSize};

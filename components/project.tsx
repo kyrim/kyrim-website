@@ -18,11 +18,10 @@ const ProjectPanel = styled(Panel)`
 `;
 
 const Title = styled.p`
-  font-size: 2rem;
   font-weight: bold;
   color: ${(props) => props.theme.colors.primary};
 
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0;
   border-bottom: 5px solid
     ${(props) =>
@@ -32,14 +31,13 @@ const Title = styled.p`
 
 const Description = styled.p`
   color: ${(props) => props.theme.colors.darkComplementary};
-  font-size: 2rem;
 
-  padding: 1rem;
-  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+  margin: 0 0 0.5rem 0;
 `;
 
 const Links = styled.div`
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: ${(props) =>
     Color(props.theme.colors.primary).mix(Color("white"), 0.9).toString()};
   color: ${(props) => props.theme.colors.darkComplementary};
@@ -48,8 +46,6 @@ const Links = styled.div`
   margin-top: auto;
   justify-content: space-around;
   width: 100%;
-
-  font-size: 2rem;
 `;
 
 export const Project = ({

@@ -19,7 +19,7 @@ const Main = styled.main`
 
 const BaseHero = styled.div`
   position: relative;
-  min-height: 20rem;
+  min-height: 10rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ const BaseHero = styled.div`
   padding: 1rem 2rem;
 
   @media only screen and (min-width: 768px) {
-    padding: 1rem 10rem;
+    padding: 1rem 8rem;
   }
 `;
 
@@ -56,9 +56,8 @@ const ProfilePic = styled(Image)`
 
 const AboutMe = styled(BaseHero)`
   background-image: linear-gradient(white, transparent);
-  font-size: 2rem;
   color: ${(props) => props.theme.colors.darkComplementary};
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 `;
 
 const SkillHero = styled(WavyHero)``;
@@ -68,36 +67,33 @@ const ShiftedDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: -10rem;
-  margin-bottom: 15rem;
+  margin-top: -5rem;
+  margin-bottom: 7.5rem;
 `;
 
 const SearchInput = styled(Input)`
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   & * {
     color: ${(props) => props.theme.colors.white};
   }
-  font-size: 2rem;
 `;
 
 const PillContainer = styled.div`
-  min-height: 25rem;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 `;
 
 const NoExperienceMessage = styled.span`
-  font-size: 2rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   color: #ffffff;
   text-shadow: ${(props) => props.theme.boxShadow};
 `;
 
 const ProjectContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1rem;
 `;
 
 const Wave = styled.svg`
@@ -106,7 +102,7 @@ const Wave = styled.svg`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10rem;
+  height: 7.5rem;
 `;
 
 const BottomOfHeroWave = () => (
@@ -125,10 +121,10 @@ const Footer = styled.footer`
   align-items: center;
   justify-items: center;
   flex-direction: column;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
 
   @media only screen and (min-width: 768px) {
-    padding: 1rem 10rem;
+    padding: 0.5rem 5rem;
   }
 `;
 
@@ -139,11 +135,10 @@ const SocialMediaIcons = styled.div`
 
 const LinkIcons = styled(Image)`
   width: 64px;
-  margin-right: 2rem;
+  margin-right: 1rem;
 `;
 
 const FooterText = styled.p`
-  font-size: 2rem;
   color: ${(props) => props.theme.colors.darkComplementary};
 `;
 
