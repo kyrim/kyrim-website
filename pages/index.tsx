@@ -58,6 +58,17 @@ const ProfilePicture = styled.picture`
   }
 `;
 
+const ProfilePic = styled.img`
+  z-index: 1;
+  margin-top: 1rem;
+  width: 240px;
+  height: 240px;
+  border-radius: 50% 50%;
+  border: 2px solid ${(props) => props.theme.colors.primary};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  vertical-align: middle;
+`;
+
 const AboutMe = styled(BaseHero)`
   background-image: linear-gradient(white, transparent);
   color: ${(props) => props.theme.colors.darkComplementary};
@@ -167,11 +178,17 @@ export default function Home() {
         <TopHero>
           <Title>Hello! I'm Kyrim,</Title>
           <Subtitle>a Full Stack Web Software Engineer.</Subtitle>
-          <ProfilePicture>
+
+          <ProfilePic
+            src={require("../images/kyrim.jpg")}
+            alt="A Picture of kyrim"
+          />
+
+          {/* <ProfilePicture>
             <source srcSet="/kyrim.webp" type="image/webp" />
             <source srcSet="/kyrim.jpg" type="image/jpeg" />
             <img src="/kyrim.jpg" alt="A Picture of kyrim" />
-          </ProfilePicture>
+          </ProfilePicture> */}
           <BottomOfHeroWave />
         </TopHero>
 
