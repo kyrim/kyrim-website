@@ -1,7 +1,11 @@
 import Head from "next/head";
-
+import { useState } from "react";
 import styled from "styled-components";
 import { Panel, Image, H1, H2, Input } from "make-my-ui";
+
+import { Pill } from "../components/pill";
+import { skills } from "../data/skills";
+
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -76,10 +80,35 @@ const TimelinePanel = styled(Panel)`
 `;
 
 const SearchInput = styled(Input)`
+  margin-bottom: 2rem;
   & * {
     color: ${(props) => props.theme.colors.white};
   }
   font-size: 2rem;
+`;
+
+const PillContainer = styled.div`
+  min-height: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+`;
+
+const NoExperienceMessage = styled.span`
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  text-shadow: ${(props) => props.theme.boxShadow};
+`;
+
+const ProjectContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+`;
+
+const ProjectPanel = styled(Panel)`
+  border: 2px solid ${(props) => props.theme.colors.primary};
 `;
 
 const Wave = styled.svg`
@@ -101,7 +130,37 @@ const BottomOfHeroWave = () => (
   </Wave>
 );
 
+const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+`;
+
+const SocialMediaIcons = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const LinkIcons = styled(Image)`
+  margin-right: 2rem;
+`;
+
+const FooterText = styled.p`
+  font-size: 2rem;
+  color: ${(props) => props.theme.colors.darkComplementary};
+`;
+
 export default function Home() {
+  const [searchString, setSearchString] = useState("");
+
+  const filteredSkills = skills.filter(
+    (x) =>
+      !searchString ||
+      x.name.toLowerCase().includes(searchString.toLowerCase()) ||
+      x.type.toLowerCase().includes(searchString.toLowerCase())
+  );
+
   return (
     <div className="container">
       <Head>
@@ -111,10 +170,11 @@ export default function Home() {
       <Main>
         <TopHero>
           <Title>Hello! I'm Kyrim,</Title>
-          <Subtitle>a Full Stack Software Engineer.</Subtitle>
+          <Subtitle>a Full Stack Web Software Engineer.</Subtitle>
           <ProfilePic src="./kyrim.jpeg" alt="A Picture of Kyrim" />
           <BottomOfHeroWave />
         </TopHero>
+
         <AboutMe>
           <p>
             One of my very first memories as a child is playing on a computer
@@ -127,22 +187,58 @@ export default function Home() {
             changed the world.
           </p>
         </AboutMe>
+
         <ExperienceHero>
           <ShiftedDiv>
             <TimelinePanel>
               <div>Timeline</div>
             </TimelinePanel>
+
             <Subtitle>Experience</Subtitle>
             <SearchInput
               color="#ffffff"
               label="Type React, C#, Frontend, database etc..."
+              inputProps={{
+                onChange: (v) => setSearchString(v.target.value),
+              }}
             />
+            <PillContainer>
+              {filteredSkills.length > 0 ? (
+                filteredSkills.map((skill) => (
+                  <Pill type={skill.type}>{skill.name}</Pill>
+                ))
+              ) : (
+                <NoExperienceMessage>
+                  I don't have experience with that yet, but I'm always up for a
+                  challenge!
+                </NoExperienceMessage>
+              )}
+            </PillContainer>
+
+            <Subtitle>Projects</Subtitle>
+            <ProjectContainer>
+              <ProjectPanel>
+                <div>Project Title</div>
+              </ProjectPanel>
+            </ProjectContainer>
           </ShiftedDiv>
           <BottomOfHeroWave />
         </ExperienceHero>
+        <Footer>
+          <SocialMediaIcons>
+            <a href="https://www.linkedin.com/in/kyrim-steele-963bb58b/">
+              <LinkIcons src="./linkedin.png" alt="My LinkedIn profile" />
+            </a>
+            <a href="https://github.com/kyrim">
+              <LinkIcons src="./git.png" alt="My github page" />
+            </a>
+          </SocialMediaIcons>
+          <FooterText>
+            You can see the full source code for this website{" "}
+            <a href="https://github.com/kyrim/kyrim-website">here.</a>
+          </FooterText>
+        </Footer>
       </Main>
     </div>
   );
 }
-
-//linear-gradient(180deg, #6e48aa 0%, rgba(110, 72, 170, 0) 100%), #9d50bb;
