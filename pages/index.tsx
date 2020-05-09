@@ -106,7 +106,7 @@ const Wave = styled.svg`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 250px;
+  height: 10rem;
 `;
 
 const BottomOfHeroWave = () => (

@@ -7,6 +7,14 @@ import Color from "color";
 import { SiteTheme } from "../site-theme";
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 12px;
+
+    @media only screen and (min-width: 768px) {
+        font-size: ${(props) => props.theme.font.baseFontSize};
+      }
+  }
+
   body {
     background-image: radial-gradient(${(props) =>
       Color(props.theme.colors.primary)
@@ -18,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
         .toString()} 15%, transparent 16%);
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
-  } 
+  }
 `;
 
 interface Props {}
