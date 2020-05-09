@@ -27,7 +27,7 @@ const BaseHero = styled.div`
   padding: 1rem 2rem;
 
   @media only screen and (min-width: 768px) {
-    padding: 1rem 8rem;
+    padding: 1rem 10rem;
   }
 `;
 
@@ -124,7 +124,7 @@ const Footer = styled.footer`
   padding: 0.5rem 1rem;
 
   @media only screen and (min-width: 768px) {
-    padding: 0.5rem 5rem;
+    padding: 1rem 10rem;
   }
 `;
 
