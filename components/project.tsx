@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Panel, H2, Link } from "make-my-ui";
+import { Panel, Link } from "make-my-ui";
+import Color from "color";
 
 export interface Props {
   name: string;
@@ -9,9 +10,11 @@ export interface Props {
 }
 
 const ProjectPanel = styled(Panel)`
+  background-color: white;
   display: flex;
   flex-direction: column;
   border: 2px solid ${(props) => props.theme.colors.primary};
+  overflow: hidden;
 `;
 
 const Title = styled.p`
@@ -21,7 +24,10 @@ const Title = styled.p`
 
   padding: 1rem;
   margin: 0;
-  border-bottom: 5px solid #f1efff;
+  border-bottom: 5px solid
+    ${(props) =>
+      Color(props.theme.colors.primary).mix(Color("white"), 0.9).toString()};
+  color: ${(props) => props.theme.colors.darkComplementary};
 `;
 
 const Description = styled.p`
@@ -33,6 +39,9 @@ const Description = styled.p`
 `;
 
 const Links = styled.div`
+  padding: 1rem;
+  background-color: ${(props) =>
+    Color(props.theme.colors.primary).mix(Color("white"), 0.9).toString()};
   color: ${(props) => props.theme.colors.darkComplementary};
   display: flex;
   flex-direction: row;

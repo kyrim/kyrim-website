@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Color from "color";
 
 export type PillType =
   | "frontend"
@@ -30,6 +31,8 @@ const getPillColor = (type: PillType) => {
 export const Pill = styled.span<{ type: PillType }>`
   display: inline-block;
   height: max-content;
+  background-color: ${(props) =>
+    Color(props.theme.colors.primary).mix(Color("white"), 0.95).toString()};
 
   font-size: 2rem;
   padding: 0.25rem 0.5rem;
@@ -37,7 +40,6 @@ export const Pill = styled.span<{ type: PillType }>`
   margin-left: 1rem;
 
   color: ${(props) => getPillColor(props.type)};
-  background-color: white;
 
   border: 2px solid ${(props) => getPillColor(props.type)};
   box-shadow: ${(props) => props.theme.boxShadow};

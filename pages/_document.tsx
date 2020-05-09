@@ -18,6 +18,10 @@ export default class MyDocument extends Document {
             type="text/css"
           />
           <link rel="icon" href="/favicon.ico" />
+          <meta
+            name="description"
+            content="Kyrim Steele a Fullstack Software Engineer."
+          ></meta>
         </Head>
         <body>
           <Main />

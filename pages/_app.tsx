@@ -1,8 +1,25 @@
 import App from "next/app";
 
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "make-my-ui";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { GlobalStyle as MakeMyUIGlobalStyle } from "make-my-ui";
+import Color from "color";
+
 import { SiteTheme } from "../site-theme";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-image: radial-gradient(${(props) =>
+      Color(props.theme.colors.primary)
+        .mix(Color("white"), 0.96)
+        .toString()} 15%, transparent 16%),
+    radial-gradient(${(props) =>
+      Color(props.theme.colors.primary)
+        .mix(Color("white"), 0.92)
+        .toString()} 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  } 
+`;
 
 interface Props {}
 
@@ -13,6 +30,7 @@ class HouseMyStuffApp extends App<Props> {
     return (
       <ThemeProvider theme={SiteTheme}>
         <>
+          <MakeMyUIGlobalStyle />
           <GlobalStyle />
           <Component {...pageProps} />
         </>

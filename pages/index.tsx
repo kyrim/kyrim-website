@@ -1,31 +1,44 @@
 import Head from "next/head";
 import { useState } from "react";
 import styled from "styled-components";
-import { Panel, Image, H1, H2, Input } from "make-my-ui";
+import { Image, Input } from "make-my-ui";
 
+import { Timeline } from "../components/jobs";
 import { Pill } from "../components/pill";
 import { skills } from "../data/skills";
 import { Project } from "../components/project";
 import { projects } from "../data/projects";
+
+import { Title } from "../components/title";
+import { Subtitle } from "../components/subtitle";
 
 const Main = styled.main`
   display: flex;
   flex-direction: column;
 `;
 
-const Hero = styled.div`
-  align-items: center;
-  flex-direction: column;
-  background: linear-gradient(180deg, #6e48aa 0%, rgba(110, 72, 170, 0) 100%),
-    #9d50bb;
+const BaseHero = styled.div`
   position: relative;
   min-height: 20rem;
   width: 100%;
   display: flex;
-  padding: 1rem;
+  flex-direction: column;
+
+  padding: 1rem 2rem;
+
+  @media only screen and (min-width: 768px) {
+    padding: 1rem 10rem;
+  }
 `;
 
-const TopHero = styled(Hero)`
+const WavyHero = styled(BaseHero)`
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(180deg, #6e48aa 0%, rgba(110, 72, 170, 0) 100%),
+    #9d50bb;
+`;
+
+const TopHero = styled(WavyHero)`
   align-items: center;
   text-align: center;
   flex-direction: column;
@@ -37,33 +50,18 @@ const ProfilePic = styled(Image)`
   width: 256px;
   height: 256px;
   border-radius: 50% 50%;
-  border: 2px solid #f1efff;
+  border: 2px solid ${(props) => props.theme.colors.primary};
   box-shadow: ${(props) => props.theme.boxShadow};
 `;
 
-const Title = styled(H1)`
-  margin: 0 0 1rem 0;
-  font-weight: bold;
-  color: #ffffff;
-  text-shadow: ${(props) => props.theme.boxShadow};
-`;
-
-const Subtitle = styled(H2)`
-  margin: 0 0 1rem 0;
-  color: #ffffff;
-  text-shadow: ${(props) => props.theme.boxShadow};
-`;
-
-const AboutMe = styled.div`
+const AboutMe = styled(BaseHero)`
+  background-image: linear-gradient(white, transparent);
   font-size: 2rem;
-  padding: 1rem 10rem;
   color: ${(props) => props.theme.colors.darkComplementary};
   margin-bottom: 10rem;
 `;
 
-const ExperienceHero = styled(Hero)`
-  padding: 1rem 10rem;
-`;
+const SkillHero = styled(WavyHero)``;
 
 const ShiftedDiv = styled.div`
   z-index: 1;
@@ -72,13 +70,6 @@ const ShiftedDiv = styled.div`
   flex-direction: column;
   margin-top: -10rem;
   margin-bottom: 15rem;
-`;
-
-const TimelinePanel = styled(Panel)`
-  width: 100%;
-  height: 20rem;
-  margin-bottom: 2rem;
-  border: 2px solid ${(props) => props.theme.colors.primary};
 `;
 
 const SearchInput = styled(Input)`
@@ -105,7 +96,7 @@ const NoExperienceMessage = styled.span`
 
 const ProjectContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 2rem;
 `;
 
@@ -129,10 +120,16 @@ const BottomOfHeroWave = () => (
 );
 
 const Footer = styled.footer`
+  background-image: linear-gradient(white, transparent);
   display: flex;
   align-items: center;
   justify-items: center;
   flex-direction: column;
+  padding: 1rem 2rem;
+
+  @media only screen and (min-width: 768px) {
+    padding: 1rem 10rem;
+  }
 `;
 
 const SocialMediaIcons = styled.div`
@@ -182,17 +179,16 @@ export default function Home() {
           <p>
             Ever since then, I've always had a huge excitement for electronics
             and the many incredible ways software and hardware can and has
-            changed the world.
+            changed the world. That's why i've gained experience at places such
+            as:
           </p>
         </AboutMe>
 
-        <ExperienceHero>
+        <SkillHero>
           <ShiftedDiv>
-            <TimelinePanel>
-              <div>Timeline</div>
-            </TimelinePanel>
+            <Timeline />
 
-            <Subtitle>Experience</Subtitle>
+            <Subtitle>My Skills</Subtitle>
             <SearchInput
               color="#ffffff"
               label="Type React, C#, Frontend, database etc..."
@@ -215,7 +211,7 @@ export default function Home() {
               )}
             </PillContainer>
 
-            <Subtitle>Projects</Subtitle>
+            <Subtitle>My Projects</Subtitle>
             <ProjectContainer>
               {projects.map((project) => (
                 <Project {...project} key={project.name} />
@@ -223,7 +219,7 @@ export default function Home() {
             </ProjectContainer>
           </ShiftedDiv>
           <BottomOfHeroWave />
-        </ExperienceHero>
+        </SkillHero>
         <Footer>
           <SocialMediaIcons>
             <a href="https://www.linkedin.com/in/kyrim-steele-963bb58b/">
