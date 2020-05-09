@@ -28,7 +28,8 @@ const getPillColor = (type: PillType) => {
   }
 };
 
-export const Pill = styled.span<{ type: PillType }>`
+export const Pill = styled.span<{ type: PillType; active: boolean }>`
+  opacity: ${(props) => (props.active ? 1 : 0.25)};
   display: inline-block;
   height: max-content;
   background-color: ${(props) =>

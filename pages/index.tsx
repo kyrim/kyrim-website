@@ -145,12 +145,13 @@ const FooterText = styled.p`
 export default function Home() {
   const [searchString, setSearchString] = useState("");
 
-  const filteredSkills = skills.filter(
-    (x) =>
+  const activatedSkills = skills.map((x) => ({
+    ...x,
+    active:
       !searchString ||
       x.name.toLowerCase().includes(searchString.toLowerCase()) ||
-      x.type.toLowerCase().includes(searchString.toLowerCase())
-  );
+      x.type.toLowerCase().includes(searchString.toLowerCase()),
+  }));
 
   return (
     <div className="container">
@@ -193,9 +194,13 @@ export default function Home() {
               }}
             />
             <PillContainer>
-              {filteredSkills.length > 0 ? (
-                filteredSkills.map((skill) => (
-                  <Pill key={skill.name} type={skill.type}>
+              {activatedSkills.length > 0 ? (
+                activatedSkills.map((skill) => (
+                  <Pill
+                    key={skill.name}
+                    type={skill.type}
+                    active={skill.active}
+                  >
                     {skill.name}
                   </Pill>
                 ))
