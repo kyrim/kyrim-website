@@ -12,15 +12,15 @@ export type PillType =
 const getPillColor = (type: PillType) => {
   switch (type) {
     case "frontend":
-      return "#009721";
+      return "#006115";
     case "backend":
       return "#970000";
     case "fullstack":
       return "#970091";
     case "databases":
-      return "#006197";
+      return "#005D8F";
     case "caches":
-      return "#978800";
+      return "#5C5300";
     case "source control":
       return "#150097";
     default:
