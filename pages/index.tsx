@@ -5,6 +5,8 @@ import { Panel, Image, H1, H2, Input } from "make-my-ui";
 
 import { Pill } from "../components/pill";
 import { skills } from "../data/skills";
+import { Project } from "../components/project";
+import { projects } from "../data/projects";
 
 const Main = styled.main`
   display: flex;
@@ -104,11 +106,7 @@ const NoExperienceMessage = styled.span`
 const ProjectContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-`;
-
-const ProjectPanel = styled(Panel)`
-  border: 2px solid ${(props) => props.theme.colors.primary};
+  gap: 2rem;
 `;
 
 const Wave = styled.svg`
@@ -205,7 +203,9 @@ export default function Home() {
             <PillContainer>
               {filteredSkills.length > 0 ? (
                 filteredSkills.map((skill) => (
-                  <Pill type={skill.type}>{skill.name}</Pill>
+                  <Pill key={skill.name} type={skill.type}>
+                    {skill.name}
+                  </Pill>
                 ))
               ) : (
                 <NoExperienceMessage>
@@ -217,9 +217,9 @@ export default function Home() {
 
             <Subtitle>Projects</Subtitle>
             <ProjectContainer>
-              <ProjectPanel>
-                <div>Project Title</div>
-              </ProjectPanel>
+              {projects.map((project) => (
+                <Project {...project} key={project.name} />
+              ))}
             </ProjectContainer>
           </ShiftedDiv>
           <BottomOfHeroWave />
