@@ -21,11 +21,11 @@ export const Timeline = () => {
   return (
     <JobsContainer>
       <JobImage
-        src="./swinburne.png"
+        src="/swinburne.png"
         alt="Swinburne University of Technology"
       />
-      <JobImage src="./siemens.png" alt="Siemens" />
-      <JobImage src="./compass.png" alt="Compass Education" />
+      <JobImage src="/siemens.png" alt="Siemens" />
+      <JobImage src="/compass.png" alt="Compass Education" />
     </JobsContainer>
   );
 };

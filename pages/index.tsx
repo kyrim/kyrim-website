@@ -167,7 +167,7 @@ export default function Home() {
         <TopHero>
           <Title>Hello! I'm Kyrim,</Title>
           <Subtitle>a Full Stack Web Software Engineer.</Subtitle>
-          <ProfilePic src="./kyrim.jpeg" alt="A Picture of Kyrim" />
+          <ProfilePic src="/kyrim.jpeg" alt="A Picture of Kyrim" />
           <BottomOfHeroWave />
         </TopHero>
 
@@ -224,10 +224,10 @@ export default function Home() {
         <Footer>
           <SocialMediaIcons>
             <a href="https://www.linkedin.com/in/kyrim-steele-963bb58b/">
-              <LinkIcons src="./linkedin.png" alt="My LinkedIn profile" />
+              <LinkIcons src="/linkedin.png" alt="My LinkedIn profile" />
             </a>
             <a href="https://github.com/kyrim">
-              <LinkIcons src="./git.png" alt="My github page" />
+              <LinkIcons src="/git.png" alt="My github page" />
             </a>
           </SocialMediaIcons>
           <FooterText>
