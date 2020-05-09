@@ -2,11 +2,11 @@ import { DefaultTheme } from "styled-components";
 
 const SiteTheme: DefaultTheme = {
   borderRadius: "10px",
-  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.12)",
+  boxShadow: "0px 6px 4px rgba(0, 0, 0, 0.12)",
   containerPadding: "5rem",
 
   colors: {
-    primary: "#F09C67",
+    primary: "#6E48AA",
     secondary: "#ACACAC",
     complementary: "#67A4F0",
     darkComplementary: "#505074",
@@ -33,9 +33,9 @@ const SiteTheme: DefaultTheme = {
     lineHeight: "1.5",
 
     typography: {
-      header1Size: "1.75rem",
-      header2Size: "1.5rem",
-      header3Size: "1.25rem",
+      header1Size: "4rem",
+      header2Size: "3rem",
+      header3Size: "2rem",
     },
   },
 };
