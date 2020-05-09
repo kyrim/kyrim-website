@@ -49,6 +49,8 @@ const ProfilePicture = styled.picture`
   margin-top: 1rem;
 
   & > img {
+    width: 240px;
+    height: 240px;
     border-radius: 50% 50%;
     border: 2px solid ${(props) => props.theme.colors.primary};
     box-shadow: ${(props) => props.theme.boxShadow};
