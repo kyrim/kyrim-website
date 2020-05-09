@@ -138,6 +138,7 @@ const SocialMediaIcons = styled.div`
 `;
 
 const LinkIcons = styled(Image)`
+  width: 64px;
   margin-right: 2rem;
 `;
 
