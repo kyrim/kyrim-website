@@ -3,13 +3,6 @@ import Color from "color";
 import { Image } from "make-my-ui";
 
 const JobsContainer = styled.div`
-  background: radial-gradient(
-    circle farthest-side,
-    ${(props) =>
-        Color(props.theme.colors.primary).mix(Color("white"), 0.3).toString()}
-      0%,
-    transparent 25%
-  );
   display: flex;
   align-items: center;
   justify-content: center;
