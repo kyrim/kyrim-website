@@ -32,12 +32,13 @@ export const Pill = styled.span<{ type: PillType; active: boolean }>`
   opacity: ${(props) => (props.active ? 1 : 0.25)};
   display: inline-block;
   height: max-content;
+
   background-color: ${(props) =>
-    Color(props.theme.colors.primary).mix(Color("white"), 0.95).toString()};
+    Color(props.theme.colors.primary).mix(Color("white"), 0.9).toString()};
 
   padding: 0.25rem 1rem;
   margin-bottom: 0.5rem;
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 
   color: ${(props) => getPillColor(props.type)};
 

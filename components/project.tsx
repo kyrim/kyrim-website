@@ -10,7 +10,8 @@ export interface Props {
 }
 
 const ProjectPanel = styled(Panel)`
-  background-color: white;
+  background-color: ${(props) =>
+    Color(props.theme.colors.primary).mix(Color("white"), 0.95).toString()};
   display: flex;
   flex-direction: column;
   border: 2px solid ${(props) => props.theme.colors.primary};
@@ -23,9 +24,9 @@ const Title = styled.p`
 
   padding: 0.5rem;
   margin: 0;
-  border-bottom: 5px solid
+  border-bottom: 2px solid
     ${(props) =>
-      Color(props.theme.colors.primary).mix(Color("white"), 0.9).toString()};
+      Color(props.theme.colors.primary).mix(Color("white"), 0.85).toString()};
   color: ${(props) => props.theme.colors.darkComplementary};
 `;
 
