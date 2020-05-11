@@ -56,7 +56,7 @@ const ProfilePic = styled.img`
 `;
 
 const AboutMe = styled(BaseHero)`
-  background-image: linear-gradient(white, transparent);
+  background-image: linear-gradient(white, rgba(255, 255, 255, 0));
   color: ${(props) => props.theme.colors.darkComplementary};
   margin-bottom: 5rem;
 `;
@@ -117,7 +117,7 @@ const BottomOfHeroWave = () => (
 );
 
 const Footer = styled.footer`
-  background-image: linear-gradient(white, transparent);
+  background-image: linear-gradient(white, rgba(255, 255, 255, 0));
   display: flex;
   align-items: center;
   justify-items: center;
@@ -229,15 +229,21 @@ export default function Home() {
         <Footer>
           <SocialMediaIcons>
             <a href="https://www.linkedin.com/in/kyrim-steele-963bb58b/">
-              <LinkIcons src={require("../images/linkedin.png")} alt="My LinkedIn profile" />
+              <LinkIcons
+                src={require("../images/linkedin.png")}
+                alt="My LinkedIn profile"
+              />
             </a>
             <a href="https://github.com/kyrim">
-              <LinkIcons src={require("../images/git.png")} alt="My github page" />
+              <LinkIcons
+                src={require("../images/git.png")}
+                alt="My github page"
+              />
             </a>
           </SocialMediaIcons>
           <FooterText>
             You can see the full source code for this website{" "}
-            <a href="https://github.com/kyrim/kyrim-website">here.</a>
+            <a href="https://github.com/kyrim/kyrim-website">on my GitHub.</a>
           </FooterText>
         </Footer>
       </Main>
