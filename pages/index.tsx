@@ -96,6 +96,10 @@ const NoExperienceMessage = styled.span`
   text-shadow: ${(props) => props.theme.boxShadow};
 `;
 
+const ProjectsSubtitle = styled(Subtitle)`
+  margin-bottom: 1.25rem;
+`;
+
 const ProjectContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -225,7 +229,7 @@ export default function Home() {
               )}
             </PillContainer>
 
-            <Subtitle>My Projects</Subtitle>
+            <ProjectsSubtitle>My Projects</ProjectsSubtitle>
             <ProjectContainer>
               {projects.map((project) => (
                 <Project {...project} key={project.name} />
