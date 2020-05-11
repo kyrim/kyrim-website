@@ -56,9 +56,14 @@ const ProfilePic = styled.img`
 `;
 
 const AboutMe = styled(BaseHero)`
+  text-align: center;
   background-image: linear-gradient(white, rgba(255, 255, 255, 0));
   color: ${(props) => props.theme.colors.darkComplementary};
   margin-bottom: 5rem;
+`;
+
+const PBold = styled.p`
+  font-weight: bold;
 `;
 
 const SkillHero = styled(WavyHero)``;
@@ -180,9 +185,9 @@ export default function Home() {
           <p>
             Ever since then, I've always had a huge excitement for electronics
             and the many incredible ways software and hardware can and has
-            changed the world. That's why i've gained experience at places such
-            as:
+            changed the world.
           </p>
+          <PBold>That's why i've gained experience at places such as:</PBold>
         </AboutMe>
 
         <SkillHero>
