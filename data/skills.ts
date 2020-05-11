@@ -27,6 +27,14 @@ export const skills: skill[] = [
     type: "frontend",
   },
   {
+    name: "CSS",
+    type: "frontend",
+  },
+  {
+    name: "HTML",
+    type: "frontend",
+  },
+  {
     name: "C#",
     type: "backend",
   },
