@@ -41,8 +41,7 @@ export const Pill = styled.span<{ type: PillType; active: boolean }>`
   margin-right: 0.5rem;
 
   color: ${(props) => getPillColor(props.type)};
-
-  border: 2px solid ${(props) => getPillColor(props.type)};
+  border: 2px solid #6e48aa;
   box-shadow: ${(props) => props.theme.boxShadow};
   border-radius: ${(props) => props.theme.borderRadius};
 `;
