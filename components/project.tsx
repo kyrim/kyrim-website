@@ -11,7 +11,7 @@ export interface Props {
 
 const ProjectPanel = styled(Panel)`
   margin-right: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.75rem;
   min-width: 10rem;
   max-width: 25rem;
   flex: 1 1 33%;
