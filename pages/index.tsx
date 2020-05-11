@@ -92,9 +92,8 @@ const NoExperienceMessage = styled.span`
 `;
 
 const ProjectContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const Wave = styled.svg`
@@ -195,7 +194,11 @@ export default function Home() {
               color="#ffffff"
               label="Type React, C#, Frontend, database etc..."
               inputProps={{
+                id: "search",
                 onChange: (v) => setSearchString(v.target.value),
+              }}
+              labelProps={{
+                htmlFor: "search",
               }}
             />
             <PillContainer>
