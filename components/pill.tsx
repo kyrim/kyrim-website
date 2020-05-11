@@ -36,7 +36,7 @@ export const Pill = styled.span<{ type: PillType; active: boolean }>`
   background-color: ${(props) =>
     Color(props.theme.colors.primary).mix(Color("white"), 0.9).toString()};
 
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.5rem;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
 
