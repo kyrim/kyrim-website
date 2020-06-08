@@ -9,20 +9,20 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
-    "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^8.0.0",
-    "make-my-ui": "^1.0.33",
-    "next": "9.3.6",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "make-my-ui": "^1.0.34",
+    "next": "9.4.4",
     "next-compose-plugins": "^2.2.0",
-    "next-optimized-images": "^2.6.0",
+    "next-optimized-images": "^2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.1.1",
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
-    "@types/node": "^13.13.5",
-    "@types/react": "^16.9.34",
-    "typescript": "^3.8.3"
+    "@types/node": "^14.0.11",
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.5"
   }
 }
